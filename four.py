@@ -49,7 +49,7 @@ def setup_driver():
     raise RuntimeError("无法启动WebDriver，请检查路径和版本")
 
 
-# 2. 根据PDF要求创建数据存储结构
+# 2. 创建数据存储结构
 def init_dataframe():
     return pd.DataFrame(columns=[
         'notice_id', 'business_opportunity', 'title', 'publication_date', 'deadline_date',
@@ -65,7 +65,7 @@ def init_dataframe():
     ])
 
 
-# 3. 完全重构的解析函数，根据PDF要求提取所有字段
+# 3. 解析函数，提取所有字段
 def parse_detail_page(html_content, notice_url):
     soup = BeautifulSoup(html_content, 'html.parser')
     data = {}
@@ -246,7 +246,7 @@ def parse_detail_page(html_content, notice_url):
     return data, lots
 
 
-# 4. 重构的爬取函数，解决爬不到数据的问题
+# 4. 又爬取函数，解决爬不到数据
 def scrape_ted_tenders_selenium(max_pages=5, delay=3):
     print("开始使用Selenium抓取TED招标信息...")
     driver = None
@@ -261,7 +261,7 @@ def scrape_ted_tenders_selenium(max_pages=5, delay=3):
         print(f"正在访问初始页面: {initial_url}")
         driver.get(initial_url)
 
-        # 尝试关闭cookie通知
+        # 自动关闭cookie弹窗
         try:
             cookie_btn = WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "button#cookie-consent-agree")))
