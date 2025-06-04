@@ -9,14 +9,14 @@ from tqdm import tqdm
 
 # 配置日志系统
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.DEBUG,  # 更改为DEBUG级别以获取更多信息
+    format='%(asctime)s - %(levelname)s - %(funcName)s - %(message)s',
     handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('ted_crawler.log', encoding='utf-8')
+        logging.FileHandler("ted_scraper_debug.log"),
+        logging.StreamHandler()
     ]
 )
-logger = logging.getLogger('ted_crawler')
+logger = logging.getLogger("TEDScraper")
 
 # 配置文件和缓存目录
 OUTPUT_DIR = 'data'
