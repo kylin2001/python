@@ -9,10 +9,10 @@ from tqdm import tqdm
 
 # 配置日志系统
 logging.basicConfig(
-    level=logging.DEBUG,  # 更改为DEBUG级别以获取更多信息
+    level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(funcName)s - %(message)s',
     handlers=[
-        logging.FileHandler("ted_scraper_debug.log"),
+        logging.FileHandler("ted_scraper_debug.log", encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -368,7 +368,7 @@ def scrape_ted_api(max_pages=5, use_cache=True, delay=2):
 
 if __name__ == "__main__":
     # 配置参数
-    MAX_PAGES = 3  # 爬取页数
+    MAX_PAGES = 10  # 爬取页数
     USE_CACHE = False  # 首次运行禁用缓存
     DELAY = 1.5  # 页面间延迟（秒）
 
