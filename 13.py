@@ -150,7 +150,7 @@ def extract_buyer_info(notice):
             'buyer_legal_type': ''
         }
 
-    # 提取买方名称（多语言处理）
+    # 提取买方名称
     buyer_name = ''
     name_data = buyer.get('official-name', {})
     if name_data:
@@ -166,7 +166,7 @@ def extract_buyer_info(notice):
 
 
 def extract_value(data):
-    """提取价值字段"""
+    """提取value字段"""
     if not data:
         return "", ""
 
@@ -209,7 +209,7 @@ def extract_award_info(award):
                 if winner_info['winner_name']:
                     break
 
-    # 提取中标价值
+    # 提取中标value
     value = award.get('value', [])
     if value:
         winner_info['winner_value'], winner_info['winner_currency'] = extract_value(value)
@@ -231,7 +231,7 @@ def extract_lot_info(lot):
         'reason_no_winner': "",
     }
 
-    # 提取标题（多语言处理）
+    # 提取标题
     title_data = lot.get('title', {})
     if title_data:
         for names in title_data.values():
@@ -249,7 +249,6 @@ def extract_lot_info(lot):
             lot_info['purpose_cpv'] = first_cpv.get('code', '')
 
     # 提取履行地国家
-
 
     place_of_performance = lot.get('place-of-performance', [])
     if place_of_performance and len(place_of_performance) > 0:
