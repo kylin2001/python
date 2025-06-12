@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-  # 指定文件编码为UTF-8，支持中文等特殊字符
 import csv  # 用于CSV文件读写
-import time  # 用于时间控制（如延时）
+import time  # 用于时间控制
 import requests  # 用于发送HTTP请求
 import json  # 用于处理JSON数据
 import re  # 用于正则表达式匹配
@@ -48,7 +47,7 @@ def raw_data(param):
         "sec-fetch-site": "same-site",
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"
     }
-    # 网站Cookie（可能需要定期更新）
+    # 网站Cookie
     """cookies = {
         "route": "1749617454.221.31.707444|726825d00aba56cccab96f4e82375684",
         "cck1": "%7B%22cm%22%3Atrue%2C%22all1st%22%3Afalse%7D"
