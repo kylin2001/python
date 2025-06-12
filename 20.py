@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-  # 指定文件编码为UTF-8，支持中文等特殊字符
 import csv  # 用于CSV文件读写
-import time  # 用于时间控制（如延时）
+import time  # 用于时间控制
 import requests  # 用于发送HTTP请求
 import json  # 用于处理JSON数据
 import re  # 用于正则表达式匹配
