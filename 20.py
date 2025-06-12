@@ -98,7 +98,7 @@ def csv_write(content):
     print(content)
 
     # 打开CSV文件（追加模式，UTF-8-sig编码解决Excel中文乱码）
-    with open('output1.csv', 'a', newline='', encoding='utf-8-sig') as f:
+    with open('20.csv', 'a', newline='', encoding='utf-8-sig') as f:
         writer = csv.DictWriter(
             f, fieldnames=[
                 'notice_number', 'Official name', 'Legal type of the buyer', 'Country', 'Legal basis',
